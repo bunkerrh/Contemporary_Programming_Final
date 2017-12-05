@@ -32,11 +32,18 @@ namespace Bunkerrh_Final_Project
         //logic that will load a picture.
         private void displayImage()
         {
+            try
+            {
+                //we add a bitmap to display an image at the end of the program
+                Bitmap image = new Bitmap(img);
+                pb_destination.Image = (Image)image;
 
-            Bitmap image = new Bitmap(img); //img set below, img set by database
-            pb_destination.Image = (Image)image;
-
-            Controls.Add(pb_destination);
+                Controls.Add(pb_destination);
+            }
+            catch(Exception ex)
+            {
+                tb_cityStateZip.Text = "Address not found!";
+            }
         }
 
         private void finalForm_Load(object sender, EventArgs e)

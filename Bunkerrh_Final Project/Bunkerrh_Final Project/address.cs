@@ -416,6 +416,7 @@ namespace Bunkerrh_Final_Project
         {
             citiesForm citiesform = new citiesForm();
             citiesform.Show();
+          
             this.Close();
         }
         private void btnSpace_Click(object sender, EventArgs e)
@@ -433,7 +434,17 @@ namespace Bunkerrh_Final_Project
             connection.Open(); //this will open the connection to the access database
             OleDbCommand command = new OleDbCommand(); //this will give a command to the access database
             command.Connection = connection; //now the command knows what the connection information is.
-            string commandString = "SELECT * FROM Addresses WHERE [City] ='" + citiesForm.city + "'";
+            string commandString;
+            if (citiesForm.city != null)
+            {
+                commandString = "SELECT * FROM Addresses WHERE [City] ='" + citiesForm.city + "'";
+            }
+            else
+            {
+                commandString = "SELECT * FROM addresses WHERE [State ab]='" + stateForm.selectedState + "'";
+            }
+
+
             command.CommandText = commandString; //this declares what query we want to execute;
             OleDbDataReader reader = command.ExecuteReader();
            
@@ -486,6 +497,20 @@ namespace Bunkerrh_Final_Project
             this.Visible = false;
             finalForm final = new finalForm();
             final.Show();
+            citiesForm form = new citiesForm();
+            //logic to determine what to do next based on what information is missing
+            if (citiesForm.city == null)
+            {
+                street = tb_address.Text.ToString().ToLower();
+                this.Visible = false;
+                form.Show();
+            }
+            else
+            {
+                
+                final.Show();
+                this.Visible = false;
+            }
         }
 
         

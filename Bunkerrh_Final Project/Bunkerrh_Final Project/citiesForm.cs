@@ -452,10 +452,20 @@ namespace Bunkerrh_Final_Project
 
         private void btnAddressSubmit_Click(object sender, EventArgs e)
         {
-            city = tb_city.Text.ToString().ToLower();
-            this.Visible = false;
-            address addressForm = new address();
-            addressForm.Show();
+            address address = new address();
+            if (address.street == null)
+            {
+                city = tb_city.Text.ToString().ToLower();
+                this.Visible = false;
+                address addressForm = new address();
+                addressForm.Show();
+            }
+            else
+            {
+                finalForm final = new finalForm();
+                final.Show();
+                this.Visible = false;
+            }
         }
 
         private void citiesForm_Load(object sender, EventArgs e)

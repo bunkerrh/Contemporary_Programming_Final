@@ -36,25 +36,27 @@
             // lblStates
             // 
             this.lblStates.AutoSize = true;
-            this.lblStates.Location = new System.Drawing.Point(46, 72);
+            this.lblStates.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStates.Location = new System.Drawing.Point(34, 60);
             this.lblStates.Name = "lblStates";
-            this.lblStates.Size = new System.Drawing.Size(52, 17);
+            this.lblStates.Size = new System.Drawing.Size(603, 46);
             this.lblStates.TabIndex = 0;
-            this.lblStates.Text = "States:";
+            this.lblStates.Text = "What State Are You Traveling To";
             // 
             // CB_States
             // 
             this.CB_States.FormattingEnabled = true;
-            this.CB_States.Location = new System.Drawing.Point(104, 69);
+            this.CB_States.Location = new System.Drawing.Point(222, 109);
             this.CB_States.Name = "CB_States";
-            this.CB_States.Size = new System.Drawing.Size(121, 24);
+            this.CB_States.Size = new System.Drawing.Size(196, 24);
             this.CB_States.TabIndex = 2;
             // 
             // btn_stateSubmit
             // 
-            this.btn_stateSubmit.Location = new System.Drawing.Point(118, 99);
+            this.btn_stateSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_stateSubmit.Location = new System.Drawing.Point(149, 139);
             this.btn_stateSubmit.Name = "btn_stateSubmit";
-            this.btn_stateSubmit.Size = new System.Drawing.Size(75, 23);
+            this.btn_stateSubmit.Size = new System.Drawing.Size(356, 188);
             this.btn_stateSubmit.TabIndex = 3;
             this.btn_stateSubmit.Text = "Submit";
             this.btn_stateSubmit.UseVisualStyleBackColor = true;
